@@ -41,9 +41,9 @@ public class OrderManager {
      * @param args argumentos de linea de comandos
      */
     public static void main(String[] args) {
-        OrderManager om = new OrderManager();
-        om.addOrder("Alice", "Laptop");
-        om.addOrder("Bob", "Phone");
-        om.listOrders();
+        OrderManager orderManager = new OrderManager();
+        orderManager.addOrder("Alice", "Laptop");
+        orderManager.addOrder("Bob", "Phone");
+        orderManager.listOrders();
     }
 }
