@@ -47,8 +47,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
-<<<<<<< Updated upstream
-=======
             
             <!-- Cobertura de código con JaCoCo -->
             <plugin>
@@ -169,7 +167,6 @@
                     </execution>
                 </executions>
             </plugin>
->>>>>>> Stashed changes
         </plugins>
     </build>
 </project>
