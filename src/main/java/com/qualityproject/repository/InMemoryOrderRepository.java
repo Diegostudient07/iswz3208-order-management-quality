@@ -11,9 +11,12 @@ import java.util.stream.Collectors;
  * Principio OCP: Puede ser reemplazada por otras implementaciones.
  */
 public class InMemoryOrderRepository implements OrderRepository {
-    
+
     private final List<Order> orders = new ArrayList<>();
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void save(Order order) {
         if (order == null) {
@@ -22,11 +25,17 @@ public class InMemoryOrderRepository implements OrderRepository {
         orders.add(order);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Order> findAll() {
         return new ArrayList<>(orders);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Order> findByCustomerName(String customerName) {
         if (customerName == null) {
