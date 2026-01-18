@@ -10,27 +10,27 @@ import java.util.List;
  */
 public interface OrderService {
 
-    /**
-     * Registra una nueva orden.
-     *
-     * @param customerName nombre del cliente
-     * @param productName  nombre del producto
-     * @return la orden creada
-     */
-    Order registerOrder(String customerName, String productName);
+  /**
+   * Registra una nueva orden.
+   *
+   * @param customerName nombre del cliente
+   * @param productName  nombre del producto
+   * @return la orden creada
+   */
+  Order registerOrder(String customerName, String productName);
 
-    /**
-     * Obtiene todas las ordenes.
-     *
-     * @return lista de todas las ordenes
-     */
-    List<Order> getAllOrders();
+  /**
+   * Obtiene todas las ordenes.
+   *
+   * @return lista de todas las ordenes
+   */
+  List<Order> getAllOrders();
 
-    /**
-     * Obtiene las ordenes de un cliente.
-     *
-     * @param customerName nombre del cliente
-     * @return lista de ordenes del cliente
-     */
-    List<Order> getOrdersByCustomer(String customerName);
+  /**
+   * Obtiene las ordenes de un cliente.
+   *
+   * @param customerName nombre del cliente
+   * @return lista de ordenes del cliente
+   */
+  List<Order> getOrdersByCustomer(String customerName);
 }
