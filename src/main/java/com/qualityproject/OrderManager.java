@@ -11,8 +11,8 @@ import java.util.List;
  */
 @Deprecated
 public class OrderManager {
-  private List<String> customers = new ArrayList<>();
-  private List<String> orders = new ArrayList<>();
+  private final List<String> customers = new ArrayList<>();
+  private final List<String> orders = new ArrayList<>();
 
   /**
    * Agrega una orden para un cliente.
@@ -20,7 +20,7 @@ public class OrderManager {
    * @param customer nombre del cliente
    * @param order    nombre del producto
    */
-  public void addOrder(String customer, String order) {
+  public void addOrder(final String customer, final String order) {
     customers.add(customer);
     orders.add(order);
     System.out.println("Order added for " + customer);
@@ -40,8 +40,8 @@ public class OrderManager {
    *
    * @param args argumentos de linea de comandos
    */
-  public static void main(String[] args) {
-    OrderManager orderManager = new OrderManager();
+  public static void main(final String[] args) {
+    final OrderManager orderManager = new OrderManager();
     orderManager.addOrder("Alice", "Laptop");
     orderManager.addOrder("Bob", "Phone");
     orderManager.listOrders();

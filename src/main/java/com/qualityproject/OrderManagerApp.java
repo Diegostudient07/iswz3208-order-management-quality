@@ -28,7 +28,7 @@ public class OrderManagerApp {
    * @param input flujo de entrada
    * @param out flujo de salida
    */
-  public OrderManagerApp(OrderConsoleView view, InputStream input, PrintStream out) {
+  public OrderManagerApp(final OrderConsoleView view, final InputStream input, final PrintStream out) {
     if (view == null || input == null || out == null) {
       throw new IllegalArgumentException("Arguments cannot be null");
     }
@@ -55,17 +55,17 @@ public class OrderManagerApp {
    *
    * @param option opcion del menu
    */
-  public void processOption(String option) {
+  public void processOption(final String option) {
     switch (option) {
       case "1":
         out.print("Ingrese nombre del cliente: ");
-        String customer = scanner.nextLine().trim();
+        final String customer = scanner.nextLine().trim();
         out.print("Ingrese nombre del producto: ");
-        String product = scanner.nextLine().trim();
-        if (!customer.isEmpty() && !product.isEmpty()) {
-          view.addOrder(customer, product);
-        } else {
+        final String product = scanner.nextLine().trim();
+        if (customer.isEmpty() || product.isEmpty()) {
           out.println("Error: Cliente y producto no pueden estar vacios.");
+        } else {
+          view.addOrder(customer, product);
         }
         break;
       case "2":
@@ -74,11 +74,11 @@ public class OrderManagerApp {
         break;
       case "3":
         out.print("Ingrese nombre del cliente a buscar: ");
-        String searchCustomer = scanner.nextLine().trim();
-        if (!searchCustomer.isEmpty()) {
-          view.displayOrdersByCustomer(searchCustomer);
-        } else {
+        final String searchCustomer = scanner.nextLine().trim();
+        if (searchCustomer.isEmpty()) {
           out.println("Error: El nombre del cliente no puede estar vacio.");
+        } else {
+          view.displayOrdersByCustomer(searchCustomer);
         }
         break;
       case "4":
@@ -87,6 +87,7 @@ public class OrderManagerApp {
         break;
       default:
         out.println("Opcion no valida. Intente de nuevo.");
+        break;
     }
   }
 
@@ -100,7 +101,7 @@ public class OrderManagerApp {
 
     while (running) {
       showMenu();
-      String option = scanner.nextLine().trim();
+      final String option = scanner.nextLine().trim();
       processOption(option);
     }
   }
@@ -119,12 +120,12 @@ public class OrderManagerApp {
    *
    * @param args argumentos de linea de comandos
    */
-  public static void main(String[] args) {
-    OrderRepository repository = new InMemoryOrderRepository();
-    OrderService service = new OrderServiceImpl(repository);
-    OrderConsoleView view = new OrderConsoleView(service);
+  public static void main(final String[] args) {
+    final OrderRepository repository = new InMemoryOrderRepository();
+    final OrderService service = new OrderServiceImpl(repository);
+    final OrderConsoleView view = new OrderConsoleView(service);
 
-    OrderManagerApp app = new OrderManagerApp(view, System.in, System.out);
+    final OrderManagerApp app = new OrderManagerApp(view, System.in, System.out);
     app.run();
   }
 }

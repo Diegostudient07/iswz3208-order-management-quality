@@ -19,7 +19,7 @@ public class OrderConsoleView {
    * @param orderService servicio de ordenes
    * @throws IllegalArgumentException si orderService es nulo
    */
-  public OrderConsoleView(OrderService orderService) {
+  public OrderConsoleView(final OrderService orderService) {
     if (orderService == null) {
       throw new IllegalArgumentException("OrderService cannot be null");
     }
@@ -32,8 +32,8 @@ public class OrderConsoleView {
    * @param customerName nombre del cliente
    * @param productName  nombre del producto
    */
-  public void addOrder(String customerName, String productName) {
-    Order order = orderService.registerOrder(customerName, productName);
+  public void addOrder(final String customerName, final String productName) {
+    final Order order = orderService.registerOrder(customerName, productName);
     System.out.println("Order added for " + order.getCustomerName());
   }
 
@@ -41,8 +41,8 @@ public class OrderConsoleView {
    * Muestra todas las ordenes por consola.
    */
   public void displayAllOrders() {
-    List<Order> orders = orderService.getAllOrders();
-    for (Order order : orders) {
+    final List<Order> orders = orderService.getAllOrders();
+    for (final Order order : orders) {
       System.out.println(order);
     }
   }
@@ -52,10 +52,10 @@ public class OrderConsoleView {
    *
    * @param customerName nombre del cliente
    */
-  public void displayOrdersByCustomer(String customerName) {
-    List<Order> orders = orderService.getOrdersByCustomer(customerName);
+  public void displayOrdersByCustomer(final String customerName) {
+    final List<Order> orders = orderService.getOrdersByCustomer(customerName);
     System.out.println("Orders for " + customerName + ":");
-    for (Order order : orders) {
+    for (final Order order : orders) {
       System.out.println("  - " + order.getProductName());
     }
   }

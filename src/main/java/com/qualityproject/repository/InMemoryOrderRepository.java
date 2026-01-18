@@ -18,7 +18,7 @@ public class InMemoryOrderRepository implements OrderRepository {
    * {@inheritDoc}
    */
   @Override
-  public void save(Order order) {
+  public void save(final Order order) {
     if (order == null) {
       throw new IllegalArgumentException("Order cannot be null");
     }
@@ -37,7 +37,7 @@ public class InMemoryOrderRepository implements OrderRepository {
    * {@inheritDoc}
    */
   @Override
-  public List<Order> findByCustomerName(String customerName) {
+  public List<Order> findByCustomerName(final String customerName) {
     if (customerName == null) {
       throw new IllegalArgumentException("Customer name cannot be null");
     }
