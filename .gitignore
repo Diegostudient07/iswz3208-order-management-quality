@@ -29,6 +29,10 @@ target/
 # Documentos para entrega por separado (no subir al repo)
 PLAN_DE_ACCION.md
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+INFORME_ANTES.md
+>>>>>>> 3c8bb05540d747348604c9e33ac140e15ba65f64
 baseline-report.txt
 *-report.txt
 *.pdf
