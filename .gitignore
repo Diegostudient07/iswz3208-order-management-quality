@@ -22,3 +22,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Maven build directory
+target/
+
+# Documentos para entrega por separado (no subir al repo)
+PLAN_DE_ACCION.md
+INFORME_ANTES.md
+baseline-report.txt
+*-report.txt
+*.pdf
+
+*cmd
+
+*.properties
