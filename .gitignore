@@ -28,6 +28,17 @@ target/
 
 # Documentos para entrega por separado (no subir al repo)
 PLAN_DE_ACCION.md
+<<<<<<< HEAD
 baseline-report.txt
 *-report.txt
 *.pdf
+=======
+INFORME_ANTES.md
+baseline-report.txt
+*-report.txt
+*.pdf
+
+*cmd
+
+*.properties
+>>>>>>> feature/refactor-domain
