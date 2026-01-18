@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
    *
    * @param orderRepository repositorio de ordenes
    */
-  public OrderServiceImpl(OrderRepository orderRepository) {
+  public OrderServiceImpl(final OrderRepository orderRepository) {
     if (orderRepository == null) {
       throw new IllegalArgumentException("OrderRepository cannot be null");
     }
@@ -27,8 +27,8 @@ public class OrderServiceImpl implements OrderService {
    * {@inheritDoc}
    */
   @Override
-  public Order registerOrder(String customerName, String productName) {
-    Order order = new Order(customerName, productName);
+  public Order registerOrder(final String customerName, final String productName) {
+    final Order order = new Order(customerName, productName);
     orderRepository.save(order);
     return order;
   }
@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
    * {@inheritDoc}
    */
   @Override
-  public List<Order> getOrdersByCustomer(String customerName) {
+  public List<Order> getOrdersByCustomer(final String customerName) {
     return orderRepository.findByCustomerName(customerName);
   }
 }

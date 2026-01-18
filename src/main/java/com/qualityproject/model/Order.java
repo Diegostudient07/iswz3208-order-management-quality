@@ -16,7 +16,7 @@ public class Order {
    * @param productName  nombre del producto
    * @throws IllegalArgumentException si customerName o productName es nulo o vacio
    */
-  public Order(String customerName, String productName) {
+  public Order(final String customerName, final String productName) {
     if (customerName == null || customerName.trim().isEmpty()) {
       throw new IllegalArgumentException("Customer name cannot be null or empty");
     }
