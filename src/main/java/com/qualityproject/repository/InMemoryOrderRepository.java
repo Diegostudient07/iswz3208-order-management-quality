@@ -12,37 +12,37 @@ import java.util.stream.Collectors;
  */
 public class InMemoryOrderRepository implements OrderRepository {
 
-    private final List<Order> orders = new ArrayList<>();
+  private final List<Order> orders = new ArrayList<>();
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void save(Order order) {
-        if (order == null) {
-            throw new IllegalArgumentException("Order cannot be null");
-        }
-        orders.add(order);
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void save(Order order) {
+    if (order == null) {
+      throw new IllegalArgumentException("Order cannot be null");
     }
+    orders.add(order);
+  }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<Order> findAll() {
-        return new ArrayList<>(orders);
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public List<Order> findAll() {
+    return new ArrayList<>(orders);
+  }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<Order> findByCustomerName(String customerName) {
-        if (customerName == null) {
-            throw new IllegalArgumentException("Customer name cannot be null");
-        }
-        return orders.stream()
-                .filter(order -> order.getCustomerName().equals(customerName))
-                .collect(Collectors.toList());
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public List<Order> findByCustomerName(String customerName) {
+    if (customerName == null) {
+      throw new IllegalArgumentException("Customer name cannot be null");
     }
+    return orders.stream()
+        .filter(order -> order.getCustomerName().equals(customerName))
+        .collect(Collectors.toList());
+  }
 }
