@@ -7,6 +7,7 @@ import com.qualityproject.service.OrderServiceImpl;
 import com.qualityproject.ui.OrderConsoleView;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -33,7 +34,7 @@ public class OrderManagerApp {
       throw new IllegalArgumentException("Arguments cannot be null");
     }
     this.view = view;
-    this.scanner = new Scanner(input);
+    this.scanner = new Scanner(input, StandardCharsets.UTF_8);
     this.out = out;
     this.running = true;
   }
